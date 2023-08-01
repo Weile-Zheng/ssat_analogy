@@ -4,6 +4,8 @@ Solving SSAT verbal section's analogy questions using vector embedding.
 
 ---
 
+<br />
+
 ## Background
 
 Word2vec is a technique for natural language processing published in 2013. The word2vec algorithm uses a neural network model to learn word associations from a large corpus of text.
@@ -11,6 +13,8 @@ Word2vec is a technique for natural language processing published in 2013. The w
 Gensim is a python library that implements word2vec algorithms originally developed in Google for fast training of vector embedding.
 
 We use Gensim to train our vector embedding with a word2vec model and datasets from Wikipedia - "text 8"
+
+<br />
 
 ## Setting Up
 
@@ -60,6 +64,8 @@ Output:
 
 [('cat', 0.836550772190094), ('hound', 0.7825815081596375), ('pig', 0.7662081718444824), ('ass', 0.7483778595924377), ('cow', 0.7459826469421387), ('goat', 0.7381320595741272), ('dogs', 0.7354974746704102), ('bird', 0.7333177328109741), ('panda', 0.7282117009162903), ('pie', 0.72819584608078)]
 
+<br />
+
 ## Finding Distance Between Words
 
 _"In machine learning, an embedding is a way of representing data as points in n-dimensional space so that similar data points cluster together." _
@@ -80,6 +86,8 @@ print(
 Similarity between france and spain: 0.8095079660415649
 
 Similarity between bsketball and pluto: 0.07107406854629517
+
+<br />
 
 ## Difference Between Two Vectors
 
@@ -103,9 +111,13 @@ print("A final similar word after adding the difference between paris and france
 
 A final similar word after adding the difference between paris and france to england: london
 
+<img src="./img/img2.png" width=100% height=100%>
+
 \*\*Note that these vectori manipulations depends largely on the datasets we trained on, since the text8 is a dataset from 2006, it will be unlikely if we input some more modern contexted words to the model.
 
 For example, subtracting Durant from basketball and adding on to soccer vector should probably result in the name of some star soccer player, however, Kevin Durant was not yet in the league in 2006, so the results would likely not be as expected
+
+<br />
 
 ## Solving the SSAT Analogy Problems
 
@@ -152,11 +164,18 @@ print("Option E " + str(cosine_similarity(e, question)))
 Printing out the results shows that option B have the highest similarity to our question difference vector, thus giving us the correct answer.
 
 Cosine Similarities:
+
 Option A -0.5162843
+
 **Option B 0.5129441**
+
 Option C 0.111720726
+
 Option D 0.1051023
+
 Option E -0.29211172
+
+<br />
 
 ## Visualizing Solutions
 
@@ -202,7 +221,15 @@ plt.grid(True)
 plt.show()
 ```
 
+<img src="./img/img0.png" width=100% height=100%>
+
+It can be observed that the vector b is a lot closer to our difference vector presented in the question, showing a better similarity between the wordA and B in comparison to the question than the rest of the options.
+
+<br />
+
 ## Testing Solutions:
+
+<br />
 
 ## Common Problem 1:
 
