@@ -1,4 +1,5 @@
 import numpy as np
+# code for cosim can be found in src file folder
 from cosim import cosine_similarity
 from gensim.models import Word2Vec
 
