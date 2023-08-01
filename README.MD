@@ -72,7 +72,11 @@ _"In machine learning, an embedding is a way of representing data as points in n
 
 Since we trainned our embeddings based on Wikipedia billions of characters(text8 dataset), words with similar semantics or context(usually appear around one another) will be clustered in space.
 
-![wordvectors](https://storage.googleapis.com/gweb-cloudblog-publish/images/image4_fUvNRO7.max-800x800.png)
+<br />
+
+<img src="./img/img3.png" width=100% height=100%>
+
+<br />
 
 Testing it on some words shows that words have more connection result in a higher similarity than words that have less connection. Such similarty distance is calculated through cosine similarty.
 
