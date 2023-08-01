@@ -2,7 +2,7 @@
 
 Solving SSAT verbal section's analogy questions using vector embedding.
 
----
+## ![w2v](https://jalammar.github.io/images/word2vec/word2vec.png)
 
 <br />
 
@@ -79,6 +79,8 @@ Since we trainned our embeddings based on Wikipedia billions of characters(text8
 <br />
 
 Testing it on some words shows that words have more connection result in a higher similarity than words that have less connection. Such similarty distance is calculated through cosine similarty.
+
+![cos](https://miro.medium.com/v2/resize:fit:1400/1*LfW66-WsYkFqWc4XYJbEJg.png)
 
 ```
 print(
