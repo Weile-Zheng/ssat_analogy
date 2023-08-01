@@ -1,8 +1,6 @@
-from gensim.models import Word2Vec
+import numpy as np
 
-model = Word2Vec.load("trainedModel.bin")
 
-print(
-    f"Similarity between france and spain: {model.wv.similarity('france', 'spain')}")
-print(
-    f"Similarity between bsketball and pluto: {model.wv.similarity('basketball', 'pluto')}")
+def cosine_similarity(vector1, vector2):
+    # Calculate the cosine distance between the two vectors using NumPy
+    return np.dot(vector1, vector2) / (np.linalg.norm(vector1) * np.linalg.norm(vector2))

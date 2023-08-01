@@ -10,9 +10,9 @@ Solving SSAT verbal section's analogy questions using vector embedding.
 
 Word2vec is a technique for natural language processing published in 2013. The word2vec algorithm uses a neural network model to learn word associations from a large corpus of text.
 
-Gensim is a python library that implements word2vec algorithms originally developed in Google for fast training of vector embedding.
+Gensim is a python library for fast training of vector embedding that implements word2vec algorithms, which were originally developed in Google.
 
-We use Gensim to train our vector embedding with a word2vec model and datasets from Wikipedia - "text 8"
+We use Gensim to train our vector embedding with a word2vec model and a dataset from Wikipedia - "text 8"
 
 <br />
 
@@ -24,7 +24,7 @@ The first step is to install Gensim using pip (and all of its dependencies, whic
 pip install Gensim
 ```
 
-Next we will load the text8 corpus to begin our trainning
+Next we will load the text8 corpus to begin our trainning.
 
 ```
 import gensim
@@ -33,7 +33,7 @@ import gensim.downloader as api
 corpus = api.load('text8')
 ```
 
-Problems arise from these lines of code, solutions are at the end of the document
+Problems may arise from these lines of code, solutions are at the end of the document.
 
 Start training with text8 corpus
 
@@ -119,9 +119,9 @@ A final similar word after adding the difference between paris and france to eng
 
 <img src="./img/img2.png" width=100% height=100%>
 
-\*\*Note that these vectori manipulations depends largely on the datasets we trained on, since the text8 is a dataset from 2006, it will be unlikely if we input some more modern contexted words to the model.
+\*\*Note that these vectori manipulations depends largely on the datasets we trained on, since the text8 is a dataset from 2006, it will be unlikely to return expected results if we input some more modern contexted words to the model.
 
-For example, subtracting Durant from basketball and adding on to soccer vector should probably result in the name of some star soccer player, however, Kevin Durant was not yet in the league in 2006, so the results would likely not be as expected
+For example, subtracting Durant from basketball and adding on to soccer vector should probably result in the name of some star soccer player, however, Kevin Durant was not yet in the league in 2006, so the results would likely not be as expected.
 
 <br />
 
@@ -247,7 +247,7 @@ FileNotFoundError: [Errno 2] No such file or directory: ---
 
 ValueError: unable to read local cache during fallback, connect to the Internet and retry
 
-All need to be done is to create the unfound file under your **/Users/<username>/Gensim-data** directory and input it with the lines in [﻿list.json](https://github.com/RaRe-Technologies/gensim-data/blob/master/list.json) found on the Github Repo.
+All need to be done is to create the unfound file under your **/Users/(your username)/Gensim-data** directory and input it with the lines in [﻿list.json](https://github.com/RaRe-Technologies/gensim-data/blob/master/list.json) found on the Github Repo.
 
 ```
 vim /Users/<username>/Gensim-data/information.json
