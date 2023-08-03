@@ -33,7 +33,7 @@ import gensim.downloader as api
 corpus = api.load('text8')
 ```
 
-Problems may arise from these lines of code, check solutions [here](## Common Problems:)
+Problems may arise from these lines of code, check solutions [here](#Common Problems:)
 
 Start training with text8 corpus
 
@@ -237,7 +237,7 @@ It can be observed that the vector b is a lot closer to our difference vector pr
 
 <br />
 
-## Common Problems:
+## <a id="Common Problems"></a> Common Problems:
 
 These problems were common when first setting up Gensim and executing the code above:
 
