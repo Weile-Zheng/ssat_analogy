@@ -33,7 +33,7 @@ import gensim.downloader as api
 corpus = api.load('text8')
 ```
 
-Problems may arise from these lines of code, check solutions [here](#common-problems:)
+Problems may arise from these lines of code, check solutions [here](#common-problems)
 
 Start training with text8 corpus
 
