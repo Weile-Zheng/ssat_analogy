@@ -237,7 +237,7 @@ It can be observed that the vector b is a lot closer to our difference vector pr
 
 <br />
 
-## <a id="Common Problems"></a> Common Problems:
+## Common Problems
 
 These problems were common when first setting up Gensim and executing the code above:
 
