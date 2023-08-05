@@ -1,6 +1,6 @@
 # SSAT Analogies
 
-Solving SSAT verbal section's analogy questions using vector embedding.
+Walkthrough of solving [SSAT verbal](https://www.kaptest.com/study/ssat/the-ssat-analogies/) section's analogy questions through vector semantics.
 
 ## ![w2v](https://jalammar.github.io/images/word2vec/word2vec.png)
 
@@ -8,11 +8,11 @@ Solving SSAT verbal section's analogy questions using vector embedding.
 
 ## Background
 
-Word2vec is a technique for natural language processing published in 2013. The word2vec algorithm uses a neural network model to learn word associations from a large corpus of text.
+Word2vec is a famous model for NLP(natural language processing) published in 2013 from the Google lab. The word2vec algorithm uses neural network to train vector embeddings from a large corpus of text.
 
-Gensim is a python library for fast training of vector embedding that implements word2vec algorithms, which were originally developed in Google.
+Gensim is a python library that implements word2vec algorithms with fast training.
 
-We use Gensim to train our vector embedding with a word2vec model and a dataset from Wikipedia - "text 8"
+We will use Gensim to train our vector embedding with a word2vec model and a dataset from Wikipedia - "text 8". Using vector semantics, we will try to solve real world analogy problems.
 
 <br />
 
@@ -231,9 +231,61 @@ plt.show()
 
 It can be observed that the vector b is a lot closer to our difference vector presented in the question, showing a better similarity between the wordA and B in comparison to the question than the rest of the options.
 
+Another example;
+Perimeter is to square as
+
+a) Chord is to Cylinder
+
+b) Side is to Polygon
+
+c) Degree is to Angle
+
+d) Height is to Pyramid
+
+e) Circumference is to circle
+
+Cosine Similarities:
+
+Option A 0.04448876
+
+Option B -0.16866955
+
+Option C 0.23843354
+
+Option D -0.26991528
+
+**Option E 0.38653418**
+
 <br />
 
-## Testing Solutions:
+## Testing Solutions
+
+Through manually testing on a view more problems, it could be concluded that the embeddings have not reached desired results. It failed for many of the harder problems with more intricate relationship and required more human reasoning. Text8 is only an 100MB dataset, usually, larger datasets are needed to create a more robust model. We can also increase the dimension of our embedding up from 50 dimensions for better representing of word contextual information. 
+
+<br />
+
+# Using [bookcorpus](https://huggingface.co/datasets/bookcorpus) from [Hugging Face](https://huggingface.co)
+
+Using the bookcorpus dataset, which is over 1GB, we can generate much better vector embeddings suitable for our purpose. 
+
+```
+pip -install datasets
+```
+```
+from datasets import load_dataset
+book_corpus = load_dataset("bookcorpus")
+train_data = book_corpus["train"]
+```
+
+Processing the data for Gensim's word2vec model and feeding it for generating vector embeddings of 100 dimensions.
+```
+sentences = [simple_preprocess(sentence["text"]) for sentence in train_data]
+
+model = Word2Vec(sentences, vector_size=100, window=5, min_count=5, workers=4)
+```
+
+
+Note that downloading and generating training splits will take some time. 
 
 <br />
 
