@@ -295,7 +295,7 @@ Note that downloading and generating training splits will take some time.
 To save time and computing resources, we can use pretrained vectors from the GloVe, an unsupervised learning algorithm developed by Stanford researchers.
 Note that this is different from using Word2Vec ourselves, we are using a vectors trained from a different model. 
 
-
+[Solver with GloVe](https://github.com/Weile-Zheng/ssat-analogy)
 
 <br />
 
