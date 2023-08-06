@@ -260,17 +260,18 @@ Option D -0.26991528
 
 ## Testing Solutions
 
-Through manually testing on a view more problems, it could be concluded that the embeddings have not reached desired results. It failed for many of the harder problems with more intricate relationship and required more human reasoning. Text8 is only an 100MB dataset, usually, larger datasets are needed to create a more robust model. We can also increase the dimension of our embedding up from 50 dimensions for better representing of word contextual information. 
+Through manually testing on a view more problems, it could be concluded that the embeddings have not reached desired results. It failed for many of the harder problems with more intricate relationship and required more human reasoning. Text8 is only an 100MB dataset, usually, larger datasets are needed to create a more robust model. We can also increase the dimension of our embedding up from 50 dimensions for better representing of word contextual information.
 
 <br />
 
 # Using [bookcorpus](https://huggingface.co/datasets/bookcorpus) from [Hugging Face](https://huggingface.co)
 
-Using the bookcorpus dataset, which is over 1GB, we can generate much better vector embeddings suitable for our purpose. 
+Using the bookcorpus dataset, which is over 1GB, we can generate much better vector embeddings suitable for our purpose.
 
 ```
 pip -install datasets
 ```
+
 ```
 from datasets import load_dataset
 book_corpus = load_dataset("bookcorpus")
@@ -278,14 +279,23 @@ train_data = book_corpus["train"]
 ```
 
 Processing the data for Gensim's word2vec model and feeding it for generating vector embeddings of 100 dimensions.
+
 ```
 sentences = [simple_preprocess(sentence["text"]) for sentence in train_data]
 
 model = Word2Vec(sentences, vector_size=100, window=5, min_count=5, workers=4)
 ```
 
+Note that downloading and generating training splits will take some time.
 
-Note that downloading and generating training splits will take some time. 
+<br />
+
+# Using pretrained vectors from [GloVe](https://huggingface.co)
+
+To save time and computing resources, we can use pretrained vectors from the GloVe, an unsupervised learning algorithm developed by Stanford researchers.
+Note that this is different from using Word2Vec ourselves, we are using a vectors trained from a different model. 
+
+
 
 <br />
 
