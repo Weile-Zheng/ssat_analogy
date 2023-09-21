@@ -1,4 +1,4 @@
-# SSAT Analogies
+# [SSAT](https://www.ssat.org) Analogies
 
 Walkthrough of solving [SSAT verbal](https://www.kaptest.com/study/ssat/the-ssat-analogies/) section's analogy questions through vector semantics.
 
